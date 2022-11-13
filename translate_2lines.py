@@ -9,17 +9,18 @@ draw = ImageDraw.Draw(img)
 
 hanzisize = 100
 half_hanzi = hanzisize / 2
-wordsize = 35
+wordsize = 40
+margin_between = 25
 
 cell = 3 * wordsize + hanzisize
 width = ((1402 - 52) // hanzisize) * hanzisize
 width_margin = (1402 - width) // 2
 
-height = (1772 // (cell + 20)) * (cell + 20)
-if ((height + cell + 20) < 1772):
+height = (1772 // (cell + margin_between)) * (cell + margin_between)
+if ((height + cell + margin_between) < 1772):
     height = height + cell
 
-for h in range(100, height, cell + 20):
+for h in range(100, height, cell + margin_between):
     draw.line((width_margin, h, width + width_margin, h), fill=(0, 0, 0), width=2)  # (start x, start y,  end x, end y)
     draw.line((width_margin, h + wordsize, width + width_margin, h + wordsize), fill=(0, 0, 0),
               width=1)  # (start x, start
