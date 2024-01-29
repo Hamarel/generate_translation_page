@@ -136,7 +136,6 @@ while not fileOK:
         )
 
         pages = generate_array(filename)
-        print(pages)
         for k, v in pages.items():
             generate_page(k, v, pdf)
 
